@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { ethers } from "ethers";
+import contactabi from "./contactABI.json";
+
+const getData = async () => {
+  const dataAddress = "0xd9145CCE52D386f254917e481eB44e9943F39138";
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const contact = new ethers.Contract(dataAddress, contactabi, provider);
+  console.log(contact);
+
+  const num = await contact.name();
+  console.log(num);
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={getData}>GetData</button>
     </div>
   );
 }
