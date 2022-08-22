@@ -77,7 +77,9 @@ function App() {
     <>
       {loading ? (
         showloader ? (
-          <div>Loading...</div>
+          <div>
+            <h1>Loading...</h1>
+          </div>
         ) : (
           <div></div>
         )
@@ -138,6 +140,8 @@ function App() {
                   const minprice = await contacts.setWhiteListDosCap(
                     whitelistdos
                   );
+                  setShowLoader(true);
+                  setLoder(true);
                   await minprice.wait();
                   getData();
                 }
@@ -165,6 +169,8 @@ function App() {
                   setInputfiled("ownerMintReserved");
                 } else {
                   const minprice = await contacts.changeOwnerMint(ownermint);
+                  setShowLoader(true);
+                  setLoder(true);
                   await minprice.wait();
                   getData();
                 }
@@ -194,6 +200,8 @@ function App() {
                   const minprice = await contacts.setWhiteListUnoIndividualCap(
                     indiuno
                   );
+                  setShowLoader(true);
+                  setLoder(true);
                   await minprice.wait();
                   getData();
                 }
@@ -223,6 +231,8 @@ function App() {
                   const minprice = await contacts.setWhiteListDosIndividualCap(
                     indodos
                   );
+                  setShowLoader(true);
+                  setLoder(true);
                   await minprice.wait();
                   getData();
                 }
@@ -252,6 +262,8 @@ function App() {
                   const minprice = await contacts.setWhitelistUnoStartTime(
                     whiteunostart
                   );
+                  setShowLoader(true);
+                  setLoder(true);
                   await minprice.wait();
                   getData();
                 }
@@ -281,6 +293,8 @@ function App() {
                   const minprice = await contacts.setWhitelistDosStartTime(
                     whitedosstart
                   );
+                  setShowLoader(true);
+                  setLoder(true);
                   await minprice.wait();
                   getData();
                 }
@@ -310,6 +324,8 @@ function App() {
                   const minprice = await contacts.setWhitelistUnoEndTime(
                     whiteunoend
                   );
+                  setShowLoader(true);
+                  setLoder(true);
                   await minprice.wait();
                   getData();
                 }
@@ -339,6 +355,8 @@ function App() {
                   const minprice = await contacts.setWhitelistDosEndTime(
                     whitedosend
                   );
+                  setShowLoader(true);
+                  setLoder(true);
                   await minprice.wait();
                   getData();
                 }
@@ -370,6 +388,8 @@ function App() {
                   const minprice = await contacts.setWhitelistUnoMintPrice(
                     unomint
                   );
+                  setShowLoader(true);
+                  setLoder(true);
                   await minprice.wait();
                   getData();
                 }
@@ -401,6 +421,8 @@ function App() {
                   const minprice = await contacts.setWhitelistDosMintPrice(
                     dosmint
                   );
+                  setShowLoader(true);
+                  setLoder(true);
                   await minprice.wait();
                   getData();
                 }
@@ -430,6 +452,8 @@ function App() {
                   const minprice = await contacts.setPublicMintPrice(
                     publicmint
                   );
+                  setShowLoader(true);
+                  setLoder(true);
                   await minprice.wait();
                   getData();
                 }
