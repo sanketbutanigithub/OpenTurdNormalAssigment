@@ -28,6 +28,7 @@ function App() {
     setInputfiled("");
     const dataAddress = "0x9c0a8d7d9359A9f1C5C78115a2a07e3F37B69C9a";
     const provider = new ethers.providers.Web3Provider(window.ethereum);
+    await provider.send("eth_requestAccounts", []);
     const singer = provider.getSigner();
     const contact = new ethers.Contract(dataAddress, contactabi, singer);
     console.log(contact);
@@ -106,11 +107,10 @@ function App() {
                   const minprice = await contacts.setWhiteListUnoCap(
                     whitelistUno
                   );
+                  setShowLoader(true);
+                  setLoder(true);
                   await minprice.wait();
-                  const newval = await contacts.whitelistUnoCap();
-                  if (newval != null) {
-                    getData();
-                  }
+                  getData();
                 }
               }}
             >
@@ -139,10 +139,7 @@ function App() {
                     whitelistdos
                   );
                   await minprice.wait();
-                  const newval = await contacts.whitelistDosCap();
-                  if (newval != null) {
-                    getData();
-                  }
+                  getData();
                 }
               }}
             >
@@ -169,10 +166,7 @@ function App() {
                 } else {
                   const minprice = await contacts.changeOwnerMint(ownermint);
                   await minprice.wait();
-                  const newval = await contacts.ownerMintReserved();
-                  if (newval != null) {
-                    getData();
-                  }
+                  getData();
                 }
               }}
             >
@@ -201,10 +195,7 @@ function App() {
                     indiuno
                   );
                   await minprice.wait();
-                  const newval = await contacts.individualUnoCap();
-                  if (newval != null) {
-                    getData();
-                  }
+                  getData();
                 }
               }}
             >
@@ -233,10 +224,7 @@ function App() {
                     indodos
                   );
                   await minprice.wait();
-                  const newval = await contacts.individualDosCap();
-                  if (newval != null) {
-                    getData();
-                  }
+                  getData();
                 }
               }}
             >
@@ -265,10 +253,7 @@ function App() {
                     whiteunostart
                   );
                   await minprice.wait();
-                  const newval = await contacts.whitelistUnoStartTime();
-                  if (newval != null) {
-                    getData();
-                  }
+                  getData();
                 }
               }}
             >
@@ -297,10 +282,7 @@ function App() {
                     whitedosstart
                   );
                   await minprice.wait();
-                  const newval = await contacts.whitelistDosStartTime();
-                  if (newval != null) {
-                    getData();
-                  }
+                  getData();
                 }
               }}
             >
@@ -329,10 +311,7 @@ function App() {
                     whiteunoend
                   );
                   await minprice.wait();
-                  const newval = await contacts.whitelistUnoEndTime();
-                  if (newval != null) {
-                    getData();
-                  }
+                  getData();
                 }
               }}
             >
@@ -361,10 +340,7 @@ function App() {
                     whitedosend
                   );
                   await minprice.wait();
-                  const newval = await contacts.whitelistDosEndTime();
-                  if (newval != null) {
-                    getData();
-                  }
+                  getData();
                 }
               }}
             >
@@ -395,10 +371,7 @@ function App() {
                     unomint
                   );
                   await minprice.wait();
-                  const newval = await contacts.whitelistUnoMintPrice();
-                  if (newval != null) {
-                    getData();
-                  }
+                  getData();
                 }
               }}
             >
@@ -429,10 +402,7 @@ function App() {
                     dosmint
                   );
                   await minprice.wait();
-                  const newval = await contacts.whitelistDosMintPrice();
-                  if (newval != null) {
-                    getData();
-                  }
+                  getData();
                 }
               }}
             >
@@ -461,10 +431,7 @@ function App() {
                     publicmint
                   );
                   await minprice.wait();
-                  const newval = await contacts.publicMintPrice();
-                  if (newval != null) {
-                    getData();
-                  }
+                  getData();
                 }
               }}
             >
